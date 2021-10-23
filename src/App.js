@@ -1,7 +1,9 @@
+import UploadButton from "./components/UploadButton";
+
 function App() {
   return (
     <>
-    <h1>Uzair</h1>
+    <UploadButton />
     </>
   );
 }
