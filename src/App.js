@@ -1,10 +1,12 @@
+import Navbar from "./components/Navbar";
 import UploadButton from "./components/UploadButton";
 
 function App() {
   return (
-    <>
-    <UploadButton />
-    </>
+    <div className="max-w-screen-xl mx-auto">
+      <Navbar />
+      <UploadButton />
+    </div>
   );
 }
 
