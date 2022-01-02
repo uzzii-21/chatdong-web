@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const UploadButton = () => {
-    const [files, setFiles] = useState(null);
+    const [files, setFiles] = useState([]);
     const type = ['image/png', 'image/jpeg', 'image/jpg', 'image/jxr', 'image/webp']
     const changeHandler = (e) => {
         let selected = e.target.files;
@@ -10,7 +10,7 @@ const UploadButton = () => {
              console.log(files, "yes")
          }
          else{
-             setFiles(null)
+             setFiles([])
          }
     }
     return (
