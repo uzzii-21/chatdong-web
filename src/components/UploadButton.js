@@ -1,22 +1,30 @@
 import { useState } from "react";
 
 const UploadButton = () => {
-    const [files, setFiles] = useState([]);
+    
+    const [files, setFiles] = useState({});
+    const [error, setError] = useState(null);
+    
     const type = ['image/png', 'image/jpeg', 'image/jpg', 'image/jxr', 'image/webp']
+    
     const changeHandler = (e) => {
-        let selected = e.target.files;
+        let selected = e.target.files[0];
+        console.log(selected);
          if(selected && type.includes(selected.type)){
-             setFiles(...selected);
-             console.log(files, "yes")
+             setFiles(selected);
+             setError(null)
          }
          else{
-             setFiles([])
+             setFiles(null)
+             setError('Please Select an image file')
          }
     }
+    console.log(error);
+    
     return (
         <div>
             <input type="file" onChange={changeHandler} multiple />
-            {/* {files} */}
+            <div>{ error ? error : files.name}</div>
         </div>
     )
 }
