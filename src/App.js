@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import UploadButton from "./components/UploadButton";
 
 function App() {
