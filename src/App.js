@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DragandDrop from "./components/DragandDrop/DragandDrop";
+import DragAndDrop from "./components/DragAndDrop/DragAndDrop";
 
 function App() {
   const [files, setFiles] = useState({});
@@ -19,11 +19,10 @@ function App() {
       setError('Please Select an image file')
     }
   }
-  console.log(error);
   return (
     <div className="max-w-screen-xl mx-auto">
       <div>
-        <DragandDrop uploadFile={changeHandler} />
+        <DragAndDrop uploadFile={changeHandler} />
         <div>{error ? error : files.name}</div>
       </div>
     </div>
