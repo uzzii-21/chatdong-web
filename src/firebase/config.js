@@ -1,8 +1,8 @@
-import * as firebase from 'firebase/app'
-import 'firebase/storage'
-import 'firebase/firestore'
+import { initializeApp } from 'firebase/app'
+import { getStorage } from 'firebase/storage'
+import { getFirestore } from 'firebase/firestore'
 
-// firebase configuration
+// Set the configuration for your app
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -13,9 +13,9 @@ const firebaseConfig = {
 }
 
 // initialize firebase
-firebase.initializeApp(firebaseConfig)
-
-const storage = firebase.storage()
-const fireStore = firebase.firestore()
+const firebaseApp = initializeApp(firebaseConfig)
+// Get a reference to the storage service, which is used to create references in your storage bucket
+const storage = getStorage(firebaseApp)
+const fireStore = getFirestore()
 
 export { storage, fireStore }
