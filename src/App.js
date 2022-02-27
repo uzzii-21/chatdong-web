@@ -3,18 +3,21 @@ import useStorage from './hooks/useStorage'
 import imageType from './constant/constant'
 import UploadForm from './components/UploadForm/UploadForm'
 import UploadingSkeleton from './components/UploadingSkeleton/UploadingSkeleton'
+import ImageCard from './components/ImageCard/ImageCard'
+import useFirestore from './hooks/useFirestore'
 
 const App = () => {
   const [file, setFile] = useState(null)
-  const [skeletonImage, setSkeletonImage] = useState(null)
- 
-  const { progress, error, url } = useStorage(file)
-  
+  const [skeletonImage, setSkeletonImage] = useState('')
+
+  const { progress, url } = useStorage(file)
+  const { docs } = useFirestore(url)
+
   const changeFile = (e) => {
     const selectedFile = e.target.files[0]
-    if (selectedFile && imageType.includes(selectedFile.type)){
+    if (selectedFile && imageType.includes(selectedFile.type)) {
       setFile(selectedFile)
-      const reader = new FileReader();
+      const reader = new FileReader()
       reader.addEventListener('load', () => {
         setSkeletonImage(reader.result)
       })
@@ -22,21 +25,21 @@ const App = () => {
     }
   }
 
-  console.log({ progress, error, url });
-  useEffect(() => {
-    console.log(file);
-  }, [file])
+  useEffect(() => {}, [file])
 
   return (
-  <div className="App">
-    <UploadForm changeFile={changeFile} />
-    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
-      
-      <UploadingSkeleton src={skeletonImage} percent={progress} />
-      
-
+    <div className="App">
+      <UploadForm changeFile={changeFile} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        {!(progress === 100) && progress !== 0 && (
+          <UploadingSkeleton src={skeletonImage} percent={progress} />
+        )}
+        {docs.map((urls) => (
+          <ImageCard src={urls.url} />
+        ))}
+      </div>
     </div>
-  </div>
-)}
+  )
+}
 
 export default App

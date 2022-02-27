@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useRef } from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-const UploadForm = ({changeFile}) => {
+const UploadForm = ({ changeFile }) => {
   const fileInput = useRef(null)
 
   const uploadFile = () => {
@@ -12,7 +12,7 @@ const UploadForm = ({changeFile}) => {
   return (
     <div
       onClick={uploadFile}
-      className="mt-1 cursor-pointer flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
+      className="mt-1 cursor-pointer flex justify-center p-8 border-2 border-gray-300 border-dashed rounded-md"
     >
       <div className="space-y-1 text-center">
         <svg
@@ -46,7 +46,6 @@ const UploadForm = ({changeFile}) => {
           </label>
           <p className="pl-1">or drag and drop</p>
         </div>
-        <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
       </div>
     </div>
   )

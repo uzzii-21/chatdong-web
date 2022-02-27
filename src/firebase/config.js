@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getStorage } from 'firebase/storage'
-import { getFirestore } from 'firebase/firestore'
+import { getFirestore, serverTimestamp } from 'firebase/firestore'
 
 // Set the configuration for your app
 const firebaseConfig = {
@@ -17,5 +17,5 @@ const firebaseApp = initializeApp(firebaseConfig)
 // Get a reference to the storage service, which is used to create references in your storage bucket
 const storage = getStorage(firebaseApp)
 const fireStore = getFirestore()
-
-export { storage, fireStore }
+const timestamp = serverTimestamp()
+export { storage, fireStore, timestamp }
