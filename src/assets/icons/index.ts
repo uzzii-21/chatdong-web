@@ -6,6 +6,12 @@ import { ReactComponent as UserIcon } from './user.svg';
 import { ReactComponent as SignUpIcon } from './signup.svg';
 import { ReactComponent as LogInIcon } from './login.svg';
 
-
-
-export { HomeIcon, SearchIcon, SaveIcon, AddIcon, UserIcon, SignUpIcon, LogInIcon };
+export {
+  HomeIcon,
+  SearchIcon,
+  SaveIcon,
+  AddIcon,
+  UserIcon,
+  SignUpIcon,
+  LogInIcon
+};
