@@ -65,11 +65,11 @@
       "eslint --fix",
       "git add"
     ],
-    "*.{css,md,js,jsx}": [
+    "*.{css, md, js, jsx, ts, tsx}": [
       "prettier --write",
       "git add"
     ],
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js, ts}": "eslint --cache --fix",
+    "*.{js, ts, css, md}": "prettier --write"
   }
 }
