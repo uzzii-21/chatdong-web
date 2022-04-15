@@ -4,7 +4,6 @@ import {
   HomeIcon,
   SaveIcon,
   SearchIcon,
-  // AddIcon,
   SignUpIcon,
   LogInIcon,
   AddIcon,
