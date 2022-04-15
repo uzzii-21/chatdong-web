@@ -12,7 +12,7 @@ import {
 
 const Navbar: FC = () => (
   <header className="flex items-center justify-between py-4">
-        <h1 className="font-bold text-xl">PhotoGallery</h1>
+         <h1 className="font-bold text-xl">PhotoGallery</h1>
     <nav>
       <ul className="flex items-center">
         <li className="mx-2">
