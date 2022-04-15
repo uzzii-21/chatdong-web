@@ -8,4 +8,13 @@ html {
   }
 }
 @tailwind components;
+
+@layer components {
+  .btn {
+    @apply flex items-center p-3 md:px-6 text-center rounded-full transition border border-gray-900 hover:bg-gray-900 text-gray-900 hover:text-white;
+  }
+  .active-btn {
+    @apply flex items-center p-3 md:px-6 text-center rounded-full transition border border-gray-900 bg-gray-900 text-white;
+  }
+}
 @tailwind utilities;
