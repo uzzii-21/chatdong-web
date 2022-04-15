@@ -69,7 +69,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.{js, ts}": "eslint --cache --fix",
+    "src/**/*.{js, ts}": "eslint --cache --fix",
     "*.{js, ts, css, md}": "prettier --write",
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
