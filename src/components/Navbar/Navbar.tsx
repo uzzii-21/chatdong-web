@@ -9,7 +9,7 @@ import {
 
 const Navbar: FC = () => (
   <header className="flex items-center justify-between py-4">
-    <h1 className="font-bold text-xl">PhotoGallery</h1>
+        <h1 className="font-bold text-xl">PhotoGallery</h1>
     <nav>
       <ul className="flex items-center">
         <li className="mx-2">
@@ -27,10 +27,10 @@ const Navbar: FC = () => (
       <button
         type="button"
         title="Start buying"
-        className="flex items-center py-3 px-6 text-center rounded-full transition border border-gray-900 hover:bg-gray-900 text-gray-900 hover:text-white"
+        className="flex items-center p-3 md:px-6 text-center rounded-full transition border border-gray-900 hover:bg-gray-900 text-gray-900 hover:text-white"
       >
-        <AddIcon className="mr-2 w-6 h-6" />
-        <span className="block text-sm font-semibold">Create Post</span>
+        <AddIcon className="w-6 h-6" />
+        <span className="block text-sm font-semibold ml-2 hidden md:block">Create Post</span>
       </button>
       <button
         type="button"
