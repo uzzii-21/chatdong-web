@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react'
-import { collection, getDocs } from 'firebase/firestore'
-import { fireStore } from '../firebase/config'
+import { useEffect, useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { fireStore } from '../firebase/config';
 
-const useFirestore = (file) => {
-  const [docs, setDocs] = useState([])
-  useEffect(async () => {
-    const querySnapshot = await getDocs(collection(fireStore, 'images'))
-    querySnapshot.forEach((doc) => {
-      setDocs((prev) => [...prev, doc.data()])
-    })
-  }, [file])
-  return { docs }
-}
+const useFirestore = (file: any) => {
+  const [docs, setDocs] = useState<any>([]);
+  useEffect(() => {
+    const s = async () => {
+      const querySnapshot = await getDocs(collection(fireStore, 'images'));
+      querySnapshot.forEach((doc) => {
+        setDocs((prev: any) => [...prev, doc.data()]);
+      });
+    };
+    s();
+  }, [file]);
+  return { docs };
+};
 
-export default useFirestore
+export default useFirestore;

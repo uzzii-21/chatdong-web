@@ -1,3 +1,3 @@
-const imageType = ['image/png', 'image/jpeg', 'image/webp', 'image/jxr']
+const imageType = ['image/png', 'image/jpeg', 'image/webp', 'image/jxr'];
 
-export default imageType
+export default imageType;

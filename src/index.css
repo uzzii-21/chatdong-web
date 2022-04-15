@@ -1,7 +1,10 @@
 @tailwind base;
+html {
+  font-family: 'Urbanist', sans-serif;
+}
 @layer base {
   body {
-    @apply max-w-screen-xl mx-auto my-8 px-8;
+    @apply max-w-screen-2xl px-8 mx-auto;
   }
 }
 @tailwind components;

@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-const ImageCard = ({ src }) => (
+const ImageCard = ({ src }: any) => (
   <div className="relative rounded-md overflow-hidden shadow-md">
     <img className="filter" src={src} alt="" />
   </div>
-)
+);
 
-export default ImageCard
+export default ImageCard;
 
 ImageCard.propTypes = {
   src: PropTypes.string.isRequired
-}
+};

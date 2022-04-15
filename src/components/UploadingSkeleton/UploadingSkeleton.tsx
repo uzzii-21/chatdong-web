@@ -1,6 +1,12 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { FC } from 'react';
 
-const UploadingSkeleton = ({ src, percent = 100 }) => (
+interface IProps {
+  src: any;
+  percent: number;
+}
+
+const UploadingSkeleton: FC<IProps> = ({ src, percent = 100 }) => (
   <div className="relative rounded-md overflow-hidden">
     <img className="filter" src={src} alt="" />
     <div className="backdrop-blur-sm bg-gray-500/30 absolute top-0 left-0 h-full w-full flex items-center justify-center">
@@ -26,11 +32,11 @@ const UploadingSkeleton = ({ src, percent = 100 }) => (
       </div>
     </div>
   </div>
-)
+);
 
-export default UploadingSkeleton
+export default UploadingSkeleton;
 
 UploadingSkeleton.propTypes = {
   src: PropTypes.string.isRequired,
   percent: PropTypes.number.isRequired
-}
+};

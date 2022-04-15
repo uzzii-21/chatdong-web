@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useRef } from 'react'
-import PropTypes from 'prop-types'
+import { useRef } from 'react';
+import PropTypes from 'prop-types';
 
-const UploadForm = ({ changeFile }) => {
-  const fileInput = useRef(null)
+const UploadForm = ({ changeFile }: any) => {
+  const fileInput = useRef<any>(null);
 
   const uploadFile = () => {
-    fileInput.current.click()
-  }
+    fileInput.current.click();
+  };
   return (
     <div
       onClick={uploadFile}
@@ -48,11 +48,11 @@ const UploadForm = ({ changeFile }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UploadForm
+export default UploadForm;
 
 UploadForm.propTypes = {
   changeFile: PropTypes.func.isRequired
-}
+};

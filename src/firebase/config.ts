@@ -1,6 +1,6 @@
-import { initializeApp } from 'firebase/app'
-import { getStorage } from 'firebase/storage'
-import { getFirestore, serverTimestamp } from 'firebase/firestore'
+import { initializeApp } from 'firebase/app';
+import { getStorage } from 'firebase/storage';
+import { getFirestore, serverTimestamp } from 'firebase/firestore';
 
 // Set the configuration for your app
 const firebaseConfig = {
@@ -10,12 +10,12 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_APP_ID
-}
+};
 
 // initialize firebase
-const firebaseApp = initializeApp(firebaseConfig)
+const firebaseApp = initializeApp(firebaseConfig);
 // Get a reference to the storage service, which is used to create references in your storage bucket
-const storage = getStorage(firebaseApp)
-const fireStore = getFirestore()
-const timestamp = serverTimestamp()
-export { storage, fireStore, timestamp }
+const storage = getStorage(firebaseApp);
+const fireStore = getFirestore();
+const timestamp = serverTimestamp();
+export { storage, fireStore, timestamp };
