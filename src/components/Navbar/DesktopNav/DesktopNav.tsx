@@ -59,7 +59,12 @@ const DesktopNav = () => (
               Create Post
             </span>
           </button>
-          <NavLink to="/profile" className="ml-2 btn p-3">
+          <NavLink
+            to="/profile"
+            className={({ isActive }: any) =>
+              isActive ? 'active-btn ml-2 p-3' : 'btn ml-2 p-3'
+            }
+          >
             <UserIcon className="w-6 h-6" />
           </NavLink>
         </div>

@@ -5,6 +5,10 @@ import { ReactComponent as AddIcon } from './add.svg';
 import { ReactComponent as UserIcon } from './user.svg';
 import { ReactComponent as SignUpIcon } from './signup.svg';
 import { ReactComponent as LogInIcon } from './login.svg';
+import { ReactComponent as MailIcon } from './mail.svg';
+import { ReactComponent as PassIcon } from './pass.svg';
+import { ReactComponent as EyeIcon } from './eye.svg';
+import { ReactComponent as EyeOffIcon } from './eye-off.svg';
 
 export {
   HomeIcon,
@@ -13,5 +17,9 @@ export {
   AddIcon,
   UserIcon,
   SignUpIcon,
-  LogInIcon
+  LogInIcon,
+  MailIcon,
+  PassIcon,
+  EyeIcon,
+  EyeOffIcon
 };
