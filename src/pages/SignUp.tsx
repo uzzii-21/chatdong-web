@@ -43,7 +43,7 @@ const SignUp = () => {
           <div className="flex-grow border-t border-gray-300" />
         </div>
 
-        <form action="">
+        <form>
           <div className="flex items-center border border-gray-300 text-gray-500 px-4 py-3 rounded-full mb-4">
             <UserIcon />
             <input
@@ -88,7 +88,7 @@ const SignUp = () => {
             </button>
           </div>
           <button
-            type="button"
+            type="submit"
             className="btn text-white bg-indigo-600 w-full font-bold mb-8"
           >
             Create Account

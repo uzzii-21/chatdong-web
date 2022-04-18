@@ -13,7 +13,7 @@ const DesktopNav = () => (
   <header className="flex items-center justify-between py-4">
     <h1 className="font-bold text-xl">PhotoGallery</h1>
 
-    {true ? (
+    {false ? (
       <>
         <nav>
           <ul className="flex items-center">

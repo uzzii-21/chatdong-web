@@ -12,7 +12,7 @@ const MobileNav = () => (
     <header className="py-4">
       <h1 className="font-bold text-xl">PhotoGallery</h1>
     </header>
-    {true ? (
+    {false ? (
       <nav className="fixed bottom-0 left-0 right-0 p-4">
         <ul className="flex items-center justify-between">
           <li className="mx-4">
