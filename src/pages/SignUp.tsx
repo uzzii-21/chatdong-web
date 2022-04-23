@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  updateProfile
+} from 'firebase/auth';
+import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
+import {
   EyeIcon,
   EyeOffIcon,
   MailIcon,
@@ -8,8 +14,11 @@ import {
   UserIcon
 } from '../assets/icons';
 import googleLogo from '../assets/icons/google.png';
+import { app, db } from '../firebase/config';
 
 const SignUp = () => {
+  console.log(app);
+
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -24,6 +33,37 @@ const SignUp = () => {
       ...prevState,
       [e.target.name]: e.target.value
     }));
+  };
+
+  const submitHandler = async (e: any) => {
+    e.preventDefault();
+    setFormData((prevState) => ({
+      ...prevState,
+      timestamp: serverTimestamp()
+    }));
+    try {
+      const auth = getAuth();
+      const userCredential = createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const { user } = await userCredential;
+      updateProfile(auth.currentUser!, {
+        displayName: name
+      });
+
+      const data = { formData };
+
+      await setDoc(doc(db, 'users ', user.uid), data);
+
+      console.log(user);
+    } catch (error: any) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    }
   };
 
   return (
@@ -43,7 +83,7 @@ const SignUp = () => {
           <div className="flex-grow border-t border-gray-300" />
         </div>
 
-        <form>
+        <form onSubmit={submitHandler}>
           <div className="flex items-center border border-gray-300 text-gray-500 px-4 py-3 rounded-full mb-4">
             <UserIcon />
             <input
