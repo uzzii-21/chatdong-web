@@ -14,11 +14,9 @@ import {
   UserIcon
 } from '../assets/icons';
 import googleLogo from '../assets/icons/google.png';
-import { app, db } from '../firebase/config';
+import { db } from '../firebase/config';
 
 const SignUp = () => {
-  console.log(app);
-
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -37,10 +35,7 @@ const SignUp = () => {
 
   const submitHandler = async (e: any) => {
     e.preventDefault();
-    setFormData((prevState) => ({
-      ...prevState,
-      timestamp: serverTimestamp()
-    }));
+
     try {
       const auth = getAuth();
       const userCredential = createUserWithEmailAndPassword(
@@ -50,15 +45,14 @@ const SignUp = () => {
       );
 
       const { user } = await userCredential;
+
       updateProfile(auth.currentUser!, {
         displayName: name
       });
 
-      const data = { formData };
+      const data = { ...formData, timestamp: serverTimestamp() };
 
-      await setDoc(doc(db, 'users ', user.uid), data);
-
-      console.log(user);
+      await setDoc(doc(db, 'users', user.uid), data);
     } catch (error: any) {
       const errorCode = error.code;
       const errorMessage = error.message;
